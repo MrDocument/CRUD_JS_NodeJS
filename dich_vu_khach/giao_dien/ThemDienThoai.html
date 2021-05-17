@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thêm điện thoại</title>
+</head>
+
+<body>
+    <div>
+        <a href="http://127.0.0.1:5500/giao_dien/DocDsDienThoai.html">Trang chủ</a>
+        <h1>Thêm Điện thoại</h1>
+        <table>
+            <tr>
+                <td>Nhập mã số</td>
+                <td> <input type="text" name="" id="Th_Ma_so"></td>
+            </tr>
+            <tr>
+                <td>Nhập tên</td>
+                <td> <input type="text" name="" id="Th_Ten"></td>
+            </tr>
+            <tr>
+                <td>Đơn giá nhập</td>
+                <td> <input type="text" name="" id="Th_Don_gia_Nhap"></td>
+            </tr>
+            <tr>
+                <td>Nhóm điện thoại</td>
+                <td><label for="">Iphone</label><input type="radio" name="r" value="IPHONE" id="chk1" checked>
+                    <label for="">Android</label><input type="radio" name="r" value="ANDROID" id="chk2">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <button id="Th_Them">Thêm</button>
+                </td>
+            </tr>
+        </table>
+    </div>
+
+    <script src="../xu_ly/xl.js"></script>
+    <script>
+        Th_Them.onclick = () => {
+            //nếu chck1 thì là iphone, ngược lại là android
+            let nhom = (chk1.checked) ? chk1.value : chk2.value
+            let dienthoai = {
+                "Ten":Th_Ten.value,
+                "Ma_so":Th_Ma_so.value,
+                "Don_gia_Ban":parseInt(Th_Don_gia_Nhap.value * 1.1),
+                "Don_gia_Nhap":Number(Th_Don_gia_Nhap.value),
+                "Nhom_Dien_thoai": {
+                    "Ten":nhom,
+                    "Ma_so":nhom
+                },
+                "Danh_sach_Phieu_Dat":[],
+                "Danh_sach_Phieu_Ban":[],
+                "Danh_sach_Phieu_Nhap":[]
+            }
+
+            let kq = Them_Dien_Thoai(dienthoai);
+            if(kq == 'OK'){
+                alert("Thêm thành công");
+            }
+        }
+
+    </script>
+</body>
+
+</html>

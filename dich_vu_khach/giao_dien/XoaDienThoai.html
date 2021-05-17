@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Xóa điện thoại</title>
+</head>
+
+<body>
+    <table>
+        <caption>
+            <h2>Xóa điện thoại</h2>
+        </caption>
+        <tr>
+            <td>
+                Nhập Mã số
+                <input type="text" id="Th_Ma_so">
+
+            </td>
+        </tr>
+        <tr style="text-align: center;">
+            <td colspan="2">
+                <button id="Th_Xoa">Xóa</button>
+            </td>
+        </tr>
+    </table>
+    <script src="../xu_ly/xl.js"></script>
+    <script>
+        Th_Xoa.onclick = function () {
+            let dienthoai = {
+                "Ma_so": Th_Ma_so.value,
+            }
+            let kq = Xoa_Dien_Thoai(dienthoai);
+            if (kq == 'OK') {
+                alert('Xóa thành công');
+            }
+        }
+    </script>
+</body>
+
+</html>

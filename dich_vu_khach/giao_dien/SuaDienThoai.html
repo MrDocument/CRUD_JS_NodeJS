@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sửa Điện thoại</title>
+
+</head>
+
+<body>
+    <table>
+        <caption>
+            <h1>Sửa Điện thoại</h1>
+        </caption>
+        <tr>
+            <td>Tên</td>
+            <td><input type="text" id="Th_Ten"></td>
+        </tr>
+        <tr>
+            <td>Nhập Mã số</td>
+            <td><input type="text" id="Th_Ma_so"></td>
+        </tr>        
+        <tr>
+            <td>Đơn giá Nhập</td>
+            <td><input type="text" id="Th_Don_gia_Nhap"></td>
+        </tr>
+        
+        <tr style="text-align: center;">
+            <td colspan="2">
+                <button id="Th_Sua">Sửa</button>
+            </td>
+        </tr>
+    </table>
+    <script src="../xu_ly/xl.js"></script>
+    <script>
+        Th_Sua.onclick = () => {
+            let dienthoai = {
+                "Ten": Th_Ten.value,
+                "Ma_so": Th_Ma_so.value,                                      
+                "Don_gia_Nhap": Th_Don_gia_Nhap.value,
+                         
+            }
+
+            let kq=Sua_Dien_Thoai(dienthoai)
+            if(kq=="OK"){
+                alert('Sửa thành công')
+            }
+        }
+    </script>
+</body>
+
+</html>
+
+<!--
+    {
+        "Ten": "IPHONE 14  256GB",
+        "Ma_so": "IPHONE_14",
+        "Don_gia_Ban": 15000000,
+        "Don_gia_Nhap": 14000000,
+        "Nhom_Dien_thoai": {
+            "Ten": "Iphone",
+            "Ma_so": "IPHONE"
+        },
+        "Danh_sach_Phieu_Dat": [],
+        "Danh_sach_Phieu_Ban": [],
+        "Danh_sach_Phieu_Nhap": []
+    }    
+-->

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Danh sách điện thoại</title>
+</head>
+
+<body>
+    <h1 style="text-align: center;">Danh sách điện thoại chức năng: CRUD</h1>
+    <div id="Th_DanhSachDienThoai">
+
+    </div>
+    <script src="../xu_ly/xl.js"></script>
+
+    <script>
+        let ds = danh_sach_dien_thoai();
+        let html = '';
+        ds.forEach(element => {
+            html += `
+        <div style="border: 1px solid; background-color:white;
+         text-align:center; width:350px; float:left; margin:2px;">
+            <h3>${element.Ma_so} - ${element.Ten}</h3>
+            Đơn giá bán: ${Tao_Chuoi_The_hien_So_nguyen_duong(element.Don_gia_Ban)}<sup>đ</sup>
+            <p>${element.Nhom_Dien_thoai.Ten}</p>
+        </div>
+            `
+        });
+        Th_DanhSachDienThoai.innerHTML = html;
+    </script>
+</body>
+
+</html>

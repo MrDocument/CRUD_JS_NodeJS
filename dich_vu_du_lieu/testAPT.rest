@@ -1,0 +1,36 @@
+GET http://localhost:1000/dsDienthoai
+
+###
+
+POST http://localhost:1000/ThemDienThoai
+Content-Type: application/json
+
+{
+    "Ten": "Huawei 11",
+    "Ma_so": "Huawei",
+    "Don_gia_Ban": 23000000,
+    "Don_gia_Nhap": 20000000,
+    "Nhom_Dien_thoai": { "Ten": "Android", "Ma_so": "ANDROID" },
+    "Danh_sach_Phieu_Dat": [],
+    "Danh_sach_Phieu_Ban": [],
+    "Danh_sach_Phieu_Nhap": []
+}
+
+###
+
+POST http://localhost:1000/SuaDienThoai
+Content-Type: application/json
+
+{
+    "Ma_so":"Huawei",
+    "Ten":"Tên mới 8",
+    "Don_gia_Nhap":"12000000"
+}
+
+###
+POST http://localhost:1000/XoaDienThoai
+Content-Type: application/json
+
+{
+    "Ma_so":"Huawei"
+}
